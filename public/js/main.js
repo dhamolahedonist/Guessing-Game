@@ -5,6 +5,9 @@ const roomName = document.getElementById("room-name");
 const userList = document.getElementById("users");
 const peopleCount = document.getElementById("people-count");
 const gameBtn = document.querySelector(".game-btn");
+const questions = [
+  { question: "what is the first letter in an alphabet ", ans: "A" },
+];
 
 // get username and room
 const { username, room } = Qs.parse(location.search, {
@@ -59,7 +62,8 @@ function render(message) {
     div.classList.add("message");
     div.innerHTML = ` <p class="meta">${message.username} <span>${message.time}</span></p>
             <p class="text">
-              ${message.text}
+              ${questions[0].question}
+
             </p>`;
     document.querySelector(".chat-messages").appendChild(div);
   });
